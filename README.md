@@ -4,10 +4,8 @@
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Platform](https://img.shields.io/badge/platform-ROCKNIX%20%7C%20Linux%20ARM64-orange.svg)
 
-A lightweight Curses-based media player designed for ROCKNIX handheld devices (such as Anbernic RG VITA PRO, RK3576 / RK3588, etc.).  
+A lightweight Curses-based media player designed for ROCKNIX handheld devices (Linux ARM64 / Rockchip).  
 Stream and enjoy high-definition videos directly from your local NAS or router SMB share without local storage constraints.
-
-![Preview](assets/preview.png)
 
 ---
 

@@ -1,7 +1,7 @@
 {
-  "name": "chore-media-player",
+  "name": "whim-player",
   "version": "0.1.0.0",
-  "description": "FUSE SMB streaming media player for ROCKNIX handheld devices (RG VITA PRO)",
+  "description": "FUSE SMB streaming media player for ROCKNIX handheld devices",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
@@ -15,8 +15,7 @@
     "rocknix",
     "mpv",
     "curses",
-    "handheld",
-    "rg-vita-pro"
+    "handheld"
   ],
   "author": "Eruhoon",
   "license": "MIT"
