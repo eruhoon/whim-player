@@ -1,0 +1,32 @@
+# Anbernic RG Vita Pro Button Mapping
+# Physical A (Right) -> Enter
+# Physical B (Bottom) -> ESC
+# Physical X (Top) -> x
+# Physical Y (Left) -> y
+
+b = enter
+a = esc
+y = x
+x = y
+
+start = q
+back = f
+guide = q
+
+up = up
+down = down
+left = left
+right = right
+
+left_analog_up = up
+left_analog_down = down
+left_analog_left = left
+left_analog_right = right
+
+l1 = pageup
+r1 = pagedown
+l2 = [
+r2 = ]
+
+deadzone_y = 2100
+deadzone_x = 1900

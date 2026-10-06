@@ -1,0 +1,8 @@
+{
+  "smb_host": "192.168.0.1",
+  "smb_port": 445,
+  "smb_share": "HDD1",
+  "smb_user": "username",
+  "smb_pass": "password",
+  "mount_point": "/storage/smb_player_mount"
+}

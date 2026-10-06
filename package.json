@@ -1,0 +1,23 @@
+{
+  "name": "chore-media-player",
+  "version": "0.1.0.0",
+  "description": "FUSE SMB streaming media player for ROCKNIX handheld devices (RG VITA PRO)",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "check-version": "node scripts/check-version.mjs",
+    "deploy": "bash deploy.sh"
+  },
+  "keywords": [
+    "smb",
+    "media-player",
+    "rocknix",
+    "mpv",
+    "curses",
+    "handheld",
+    "rg-vita-pro"
+  ],
+  "author": "Eruhoon",
+  "license": "MIT"
+}

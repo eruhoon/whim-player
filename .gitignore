@@ -1,0 +1,23 @@
+# Logs & Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+.DS_Store
+
+# User Private Configuration (DO NOT COMMIT)
+config.json
+
+# Node & PNPM
+node_modules/
+.pnpm-store/
+.pnpm-debug.log*
+
+# Build Output
+dist/
+release/
+
+# Temporary / Debug images
+*.png
+!assets/*.png
