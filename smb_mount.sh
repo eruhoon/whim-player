@@ -23,7 +23,7 @@ fi
 # Parse JSON using python3
 SMB_HOST=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_host', '192.168.0.1'))")
 SMB_PORT=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_port', 445))")
-SMB_SHARE=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_share', 'HDD1'))")
+SMB_SHARE=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_share', 'share'))")
 SMB_USER=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_user', ''))")
 SMB_PASS=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('smb_pass', ''))")
 MOUNT_POINT=$(python3 -c "import json; d=json.load(open('$CONFIG_FILE')); print(d.get('mount_point', '/storage/smb_player_mount'))")

@@ -99,7 +99,7 @@ def load_config():
     default_config = {
         "smb_host": "192.168.0.1",
         "smb_port": 445,
-        "smb_share": "HDD1",
+        "smb_share": "share",
         "smb_user": "",
         "smb_pass": "",
         "mount_point": "/storage/smb_player_mount"
@@ -616,10 +616,12 @@ class SMBPlayerUI:
         max_rows = max(1, list_bottom - list_top)
 
         if not is_mounted(self.mount_point):
-            warn_title = "[!] SMB 공유 폴더 (192.168.0.1/HDD1) 미연결"
+            host_str = self.config.get("smb_host", "SMB")
+            share_str = self.config.get("smb_share", "share")
+            warn_title = f"[!] SMB 공유 폴더 ({host_str}/{share_str}) 미연결"
             warn_desc = "아이디와 비밀번호 인증이 필요합니다."
-            safe_addstr(self.stdscr, list_top + 1, max(2, (w - len(warn_title)) // 2), warn_title, curses.color_pair(7) | curses.A_BOLD)
-            safe_addstr(self.stdscr, list_top + 2, max(2, (w - len(warn_desc)) // 2), warn_desc, curses.A_DIM)
+            safe_addstr(self.stdscr, list_top + 1, max(2, (w - str_display_width(warn_title)) // 2), warn_title, curses.color_pair(7) | curses.A_BOLD)
+            safe_addstr(self.stdscr, list_top + 2, max(2, (w - str_display_width(warn_desc)) // 2), warn_desc, curses.A_DIM)
 
             menu_items = [
                 "[1] NAS 접속 계정/비밀번호 설정 (가상 키보드 입력)",
@@ -773,7 +775,8 @@ class SMBPlayerUI:
                 elif field_idx == btn_idx:  # Test mount
                     save_config(self.config)
                     # Non-blocking progress display
-                    self.show_loading_box("마운트 시도 중...", "NAS(192.168.0.1) 연결을 시도하고 있습니다...")
+                    host_str = self.config.get("smb_host", "SMB")
+                    self.show_loading_box("마운트 시도 중...", f"서버({host_str}) 연결을 시도하고 있습니다...")
                     ok, msg = run_mount()
                     if ok:
                         self.set_status("마운트 성공! 공유 폴더에 연결되었습니다.")
@@ -860,7 +863,8 @@ class SMBPlayerUI:
                     self.edit_settings()
                     self.scan_directory()
                 elif self.unmounted_idx == 1:
-                    self.show_loading_box("연결 시도 중...", "NAS(192.168.0.1) 연결을 시도하고 있습니다...")
+                    host_str = self.config.get("smb_host", "SMB")
+                    self.show_loading_box("연결 시도 중...", f"서버({host_str}) 연결을 시도하고 있습니다...")
                     ok, msg = run_mount()
                     if ok:
                         self.set_status("마운트 성공! 공유 폴더에 연결되었습니다.")

@@ -65,7 +65,7 @@ You can create `config.json` by copying `config.example.json`:
 {
   "smb_host": "192.168.0.1",
   "smb_port": 445,
-  "smb_share": "HDD1",
+  "smb_share": "share",
   "smb_user": "username",
   "smb_pass": "password",
   "mount_point": "/storage/smb_player_mount"
@@ -73,7 +73,10 @@ You can create `config.json` by copying `config.example.json`:
 ```
 
 * **On-device Configuration**: Press `X` in the browser view to open the built-in Virtual Keyboard, enter credentials, and select `[Test Connection & Mount]`.
-* **1-Click Remote Deployment**: Deploy updates directly to your device over Wi-Fi using `deploy.sh`.
+* **1-Click Remote Deployment**: Deploy updates directly to your device over Wi-Fi using `deploy.sh`:
+  ```bash
+  ./deploy.sh <DEVICE_IP>
+  ```
 
 ---
 
@@ -98,7 +101,7 @@ pnpm test
 pnpm run build
 
 # Deploy to ROCKNIX device via Wi-Fi SSH
-pnpm run deploy 192.168.0.77
+pnpm run deploy <DEVICE_IP>
 ```
 
 ---

@@ -3,7 +3,12 @@
 # deploy.sh - Deploy to Ports (/storage/roms/ports)
 # ========================================================
 
-DEVICE_IP="${1:-192.168.0.77}"
+DEVICE_IP="${1}"
+if [ -z "$DEVICE_IP" ]; then
+    echo "Usage: ./deploy.sh <DEVICE_IP>"
+    echo "Example: ./deploy.sh 192.168.0.100"
+    exit 1
+fi
 REMOTE_USER="root"
 REMOTE_PORTS_DIR="/storage/roms/ports"
 REMOTE_APP_DIR="${REMOTE_PORTS_DIR}/smb-player"

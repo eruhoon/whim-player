@@ -40,8 +40,8 @@ for (const file of requiredFiles) {
 // Test 2: Sensitive config verification
 const exampleConfigPath = path.join(ROOT_DIR, 'config.example.json');
 if (fs.existsSync(exampleConfigPath)) {
-  const content = fs.readFileSync(exampleConfigPath, 'utf8');
-  assert(!content.includes('marionette'), 'config.example.json does NOT contain private username/password');
+  const cfg = JSON.parse(fs.readFileSync(exampleConfigPath, 'utf8'));
+  assert(cfg.smb_user === 'username' && cfg.smb_pass === 'password', 'config.example.json uses dummy credentials placeholder');
 }
 
 // Test 3: .gitignore includes private config and cache
